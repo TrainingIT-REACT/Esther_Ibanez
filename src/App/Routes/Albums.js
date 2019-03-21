@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import Album from '../Model/Album';
-
 class Albums extends Component {
     constructor(props) {
         super(props);
@@ -34,12 +32,12 @@ class Albums extends Component {
                 <p>Cargando...</p>
                 : 
                 <ul>
-                {this.state.albums.map(album => <Album album={album} />)}
+                {this.state.albums.map(album => <li key={album.id}>{album.name}</li>)}
                 </ul>
             }
 
             <div>
-
+                
             </div>
     </div>
     }
