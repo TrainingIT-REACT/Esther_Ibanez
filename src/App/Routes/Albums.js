@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import AlbumList from '../Model/AlbumList';
+
 class Albums extends Component {
     constructor(props) {
         super(props);
@@ -27,19 +29,8 @@ class Albums extends Component {
     render() {
         return <div>
             Álbums: muestra los distintos álbums disponibles.
-
-            { this.state.loading ?
-                <p>Cargando...</p>
-                : 
-                <ul>
-                {this.state.albums.map(album => <li key={album.id}>{album.name}</li>)}
-                </ul>
-            }
-
-            <div>
-                
-            </div>
-    </div>
+            { this.state.loading ? <p>Cargando...</p> : <AlbumList albums={this.state.albums} /> }
+        </div>
     }
 }
 
