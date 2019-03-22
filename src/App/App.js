@@ -25,9 +25,18 @@ class App extends Component {
         <div className="App">
           <h1>Reactify</h1>
           <div>
-            Reproductor - Aquí va una cajita con un reproductor como el de spotify
-            <br />
-            flecha patras play flecha palante
+            <div className="row player border border-secondary ">
+              <div className="col">
+                <a href="#"><i class="fas fa-angle-left"></i></a>
+              </div>
+              <div className="col">
+                <a href="#"><i class="fas fa-caret-square-right"></i></a>
+              </div>
+              <div className="col">
+                <a href="#"><i class="fas fa-angle-right"></i></a>
+              </div>
+            </div>
+            
           </div>
 
           <ul class="nav justify-content-center">

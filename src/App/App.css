@@ -11,11 +11,20 @@
 
 .App a {
   font-family: 'Baloo Chettan', cursive;
+  color: #721796;
+}
+
+.App a:hover {
+  font-family: 'Baloo Chettan', cursive;
+  color: #dea4f5;
 }
 
 ul.albums {
   margin: 0;
   padding: 0;
+  max-height: 50vh;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 img.cover {
   max-width:60px;
@@ -25,23 +34,26 @@ img.cover {
 .albums > li {
   margin: 1em 0 0 0;
   list-style-type: none;
+  width: 99%;
 }
 
-.albums > li > a {
-  color: inherit;
+.albums > li > a{
   text-decoration: none;
 }
 
-.albums > li > a > .name {
-  position: absolute;
-  margin-top: 5px;
+
+.name {
   font-family: 'Playfair Display', serif;
 }
 
-.albums > li > a > .artist {
+.artist {
   font-family: 'Open Sans', sans-serif;
   font-size: 85%;
   font-style: italic;
-  position: relative;
-  top: 12px;
+}
+
+.player {
+  width: 200px;
+  font-size: 30px;
+  margin: auto;
 }
