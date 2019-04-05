@@ -32,26 +32,26 @@ class App extends Component {
           <div>
             <div className="row player border border-secondary ">
               <div className="col">
-                <a href="#"><i class="fas fa-angle-left"></i></a>
+                <a href="#"><i className="fas fa-angle-left"></i></a>
               </div>
               <div className="col">
-                <a href="#"><i class="fas fa-caret-square-right"></i></a>
+                <a href="#"><i className="fas fa-caret-square-right"></i></a>
               </div>
               <div className="col">
-                <a href="#"><i class="fas fa-angle-right"></i></a>
+                <a href="#"><i className="fas fa-angle-right"></i></a>
               </div>
             </div>
             
           </div>
 
-          <ul class="nav justify-content-center">
-            <li class="nav-item">
+          <ul className="nav justify-content-center">
+            <li className="nav-item">
               <NavLink exact className="nav-link active" activeClassName="active" to="/">Inicio</NavLink>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <NavLink className="nav-link" activeClassName="active" to="/login">Login</NavLink>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <NavLink className="nav-link" activeClassName="active" to="/albums">Albums</NavLink>
             </li>
             

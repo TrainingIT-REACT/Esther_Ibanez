@@ -28,13 +28,13 @@ ul.albums {
 }
 img.cover {
   max-width:60px;
-  margin-right: 1em;
+  margin-left: 30px;
+  float: left; 
 }
 
 .albums > li {
   margin: 1em 0 0 0;
   list-style-type: none;
-  width: 99%;
 }
 
 .albums > li > a{
@@ -44,12 +44,14 @@ img.cover {
 
 .name {
   font-family: 'Playfair Display', serif;
+  margin-left:20px;
 }
 
 .artist {
   font-family: 'Open Sans', sans-serif;
   font-size: 85%;
   font-style: italic;
+  margin-left:20px;
 }
 
 .player {
@@ -61,5 +63,5 @@ img.cover {
 a.album-play {
   font-size: 50px;
   color: white;
-  margin-left: -10px;
+  margin-left: 20px;
 }
