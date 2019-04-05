@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import AlbumList from '../Model/AlbumList';
-import Loader from '../Services/Loader';
 
 class Albums extends Component {
     constructor(props) {
@@ -30,7 +29,12 @@ class Albums extends Component {
     render() {
         return <div>
             Álbums: muestra los distintos álbums disponibles.
-            { this.state.loading ? <p>Cargando...</p> : <AlbumList albums={this.state.albums} /> }
+            { this.state.loading ? 
+                <p>Cargando...</p> : 
+                <AlbumList albums={this.state.albums} 
+                           history={this.props.history}  
+                           location={this.props.location} 
+                           match={this.props.match} /> }
         </div>
     }
 

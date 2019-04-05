@@ -1,6 +1,4 @@
 .App {
-  margin: 3em auto;
-  max-width: 50em;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -22,7 +20,6 @@
 ul.albums {
   margin: 0;
   padding: 0;
-  max-height: 50vh;
   overflow-y: auto;
   overflow-x: hidden;
 }
