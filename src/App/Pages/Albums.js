@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import AlbumList from '../Model/AlbumList';
+import Loader from '../Services/Loader';
 
 class Albums extends Component {
     constructor(props) {
@@ -32,6 +33,8 @@ class Albums extends Component {
             { this.state.loading ? <p>Cargando...</p> : <AlbumList albums={this.state.albums} /> }
         </div>
     }
+
+    
 }
 
 export default Albums;
