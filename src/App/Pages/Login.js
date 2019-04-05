@@ -1,49 +1,36 @@
-import React, { Component } from 'react';
+import React, { createRef } from 'react';
+import { connect } from 'react-redux';
+import { signUser } from '../actions/user';
 
-import UserContext from '../contexts/user';
-import Profile from './Profile';
+const SignUser = ({ signUser }) => {
+  const username = createRef();
 
-class Login extends Component {
-    constructor(props) {
-        super(props);
-    }
-  
-    render() {
-        return <UserContext.Consumer>
-            {({ signedIn, updateUser }) => {
-            return <div>
-                { signedIn ? (
-                    <Profile />
-                ) : (
-                <>
-                    { (this.props.location.state && this.props.location.state.message) &&
-                    <p>
-                        { this.props.location.state.message }
-                    </p>
-                    }
-                    
-                    <form>
-                        <div className="form-group">
-                            <label for="user">Username</label>
-                            <input type="text" className="form-control" id="user" placeholder="Username"/>
-                            <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-                        </div>
-                        <div className="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" className="form-control" id="password" placeholder="Password"/>
-                        </div>
-    
-                        <button type="submit" className="btn btn-primary"  onClick={() => updateUser(true)}>
-                        Login
-                        </button>
-                    </form>
-            
-                </>
-                )}
-            </div>
-            }}
-      </UserContext.Consumer>;
-    }
+  const onSubmit = (e) => {
+    e.preventDefault();
+    signUser(username.current.value);
+    username.current.value = '';
   }
 
-export default Login;
+  return <form onSubmit={onSubmit}>   
+    <div className="form-group">
+        <label htmlFor="user">Username</label>
+        <input type="text" className="form-control" id="user" placeholder="Username"  ref={username}/>
+        <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div className="form-group">
+        <label htmlFor="password">Password</label>
+        <input type="password" className="form-control" id="password" placeholder="Password"/>
+    </div>
+    <button type="submit" className="btn btn-primary">Login</button>        
+  </form>
+}
+
+const mapDispatchToProps = (dispatch) => ({
+    signUser: (username) => dispatch(signUser(username)),
+});
+  
+
+export default connect(
+  () => ({}),
+  mapDispatchToProps,
+)(SignUser);
