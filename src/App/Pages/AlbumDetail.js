@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import SongsList from '../Model/SongsList';
 
 const AlbumDetail = ({server, history, location, match}) => {
-  if (server.isLoading) {
+  if (server.songsLoading) {
     return <p>Cargando...</p>
-  } else if (server.error) {
+  } else if (server.songsError) {
     return <p>Hubo un error al obtener los datos :(</p>
   } else {
     return  <SongsList songs={server.songs} 

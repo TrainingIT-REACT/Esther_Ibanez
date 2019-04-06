@@ -5,8 +5,10 @@ import { ActionType } from 'redux-promise-middleware';
 const initialState = {
   albums: [],
   songs: [],
-  isLoading: true,
-  hasError: false
+  albumsLoading: true,
+  albumsError: false,
+  songsLoading: true,
+  songsError: false
 }
 
 // Implementamos el reducer
@@ -17,40 +19,40 @@ const reducer = (state = initialState, action) => {
     case `ALBUMS_${ActionType.Pending}`:
       return {
         ...state,
-        isLoading: true,
-        hasError: false
+        albumsLoading: true,
+        albumsError: false
       };
     case `ALBUMS_${ActionType.Fulfilled}`:
       return {
         ...state,
-        isLoading: false,
-        hasError: false,
+        albumsLoading: false,
+        albumsError: false,
         albums: action.payload
       };
     case `ALBUMS_${ActionType.Rejected}`:
       return {
         ...state,
-        isLoading: false,
-        hasError: true,
+        albumsLoading: false,
+        albumsError: true,
       };
     case `SONGS_${ActionType.Pending}`:
       return {
         ...state,
-        isLoading: true,
-        hasError: false
+        songsLoading: true,
+        songsError: false
       };
     case `SONGS_${ActionType.Fulfilled}`:
       return {
         ...state,
-        isLoading: false,
-        hasError: false,
+        songsLoading: false,
+        songsError: false,
         songs: action.payload
       };
     case `SONGS_${ActionType.Rejected}`:
       return {
         ...state,
-        isLoading: false,
-        hasError: true,
+        songsLoading: false,
+        songsError: true,
       };
     default:
       return state;

@@ -8,9 +8,9 @@ class Albums extends Component {
     renderAlbums() {
         const { server } = this.props;
     
-        if (server.isLoading) {
+        if (server.albumsLoading) {
           return <p>Cargando...</p>
-        } else if (server.error) {
+        } else if (server.albumsError) {
           return <p>Hubo un error al obtener los datos :(</p>
         } else {
           return  <AlbumList albums={server.albums} 
