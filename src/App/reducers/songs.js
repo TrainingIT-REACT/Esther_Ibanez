@@ -2,30 +2,32 @@ import { ActionType } from 'redux-promise-middleware';
 
 // Estado inicial
 const initialState = {
-  songs: [],
+  list: [],
   isLoading: true,
   hasError: false
 }
+
+const REDUCER_NAME = 'SONGS';
 
 // Implementamos el reducer
 const reducer = (state = initialState, action) => {
   console.log("reducer songs state ", state);
   console.log("reducer songs action ", action);
   switch(action.type) {
-    case `SONGS_${ActionType.Pending}`:
+    case `${REDUCER_NAME}_${ActionType.Pending}`:
       return {
         ...state,
         isLoading: true,
         hasError: false
       };
-    case `SONGS_${ActionType.Fulfilled}`:
+    case `${REDUCER_NAME}_${ActionType.Fulfilled}`:
       return {
         ...state,
         isLoading: false,
         hasError: false,
         list: action.payload
       };
-    case `SONGS_${ActionType.Rejected}`:
+    case `${REDUCER_NAME}_${ActionType.Rejected}`:
       return {
         ...state,
         isLoading: false,
