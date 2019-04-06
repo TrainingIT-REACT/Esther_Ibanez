@@ -7,7 +7,8 @@ import Profile from './Pages/Profile';
 import Home from './Pages/Home';
 import Loader from './Services/Loader';
 
-import { getSongs, getAlbums } from './actions/server';
+import { getAlbums } from './actions/albums';
+import { getSongs } from './actions/songs';
 
 // Css
 import './App.css';
