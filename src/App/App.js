@@ -1,4 +1,4 @@
-import React, { lazy } from 'react';
+import React, { lazy, Component } from 'react';
 import { BrowserRouter as Router, Route, NavLink, Switch } from "react-router-dom";
 import { connect } from 'react-redux';
 
@@ -7,15 +7,26 @@ import Profile from './Pages/Profile';
 import Home from './Pages/Home';
 import Loader from './Services/Loader';
 
+import { getSongs, getAlbums } from './actions/server';
+
 // Css
 import './App.css';
 
 const AlbumDetail = lazy(() => import('./Pages/AlbumDetail'));
 const Albums = lazy(() => import('./Pages/Albums'));
 
-const App = ({ user }) => {
-  return (
-    <Router>
+class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+  
+  async componentDidMount() {
+    this.props.getAlbums();
+    this.props.getSongs();
+  }
+
+  render() {
+    return <Router>
       <div className="App">
         <div className="row">
           <div className="col col-sm-1"><h1>Reactify</h1></div>
@@ -23,7 +34,7 @@ const App = ({ user }) => {
             <ul className="nav justify-content-around">
               <li className="nav-item">
                 <NavLink className="nav-link" activeClassName="active" to="/login">
-                  {user.signedIn ? 'Profile' : 'Login'}
+                  {this.props.user.signedIn ? 'Profile' : 'Login'}
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -54,25 +65,28 @@ const App = ({ user }) => {
 
         <Switch>
           <Route path="/" exact component={Home}/>
-          <Route path="/login" component={user.signedIn ? Profile : Login}/>
+          <Route path="/login" component={this.props.user.signedIn ? Profile : Login}/>
           <Route exact path="/albums" component={Loader(Albums)}/>
           <Route path="/albums/:id([0-9]*)" component={Loader(AlbumDetail)}/>
         </Switch>
     </div>
   </Router>
-  );
-}
-
-const mapStateToProps = (state/*, otherProps */) => {
-  return {
-    user: {
-      name: state.user.name,
-      signedIn: state.user.signedIn
-    }
   }
 }
 
+const mapStateToProps = (state/*, otherProps */) => {
+  console.log('app state', state);
+  return {
+    ...state
+  }
+}
+
+const mapDispatchToProps = (dispatch) => ({
+  getSongs: () => dispatch(getSongs()),
+  getAlbums: () => dispatch(getAlbums()),
+});
+
 export default connect(
   mapStateToProps,
-  () => ({})
+  mapDispatchToProps
 )(App);

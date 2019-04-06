@@ -7,7 +7,9 @@ const SignUser = ({ signUser }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    signUser(username.current.value);
+    if (username.current.value !== '') {
+      signUser(username.current.value);
+    }
     username.current.value = '';
   }
 
@@ -15,7 +17,6 @@ const SignUser = ({ signUser }) => {
     <div className="form-group">
         <label htmlFor="user">Username</label>
         <input type="text" className="form-control" id="user" placeholder="Username"  ref={username}/>
-        <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
     <div className="form-group">
         <label htmlFor="password">Password</label>

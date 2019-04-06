@@ -1,44 +1,40 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
 import AlbumList from '../Model/AlbumList';
 
-class Albums extends Component {
-    constructor(props) {
-        super(props);
+import { getAlbums } from '../actions/server';
 
-        this.state = {
-            loading: true,
-            albums: []
+class Albums extends Component {
+    renderAlbums() {
+        const { server } = this.props;
+    
+        if (server.isLoading) {
+          return <p>Cargando...</p>
+        } else if (server.error) {
+          return <p>Hubo un error al obtener los datos :(</p>
+        } else {
+          return  <AlbumList albums={server.albums} 
+                    history={this.props.history}  
+                    location={this.props.location} 
+                    match={this.props.match} /> 
         }
-    }
-        
-    async componentDidMount() {
-        try {
-            const res = await fetch('/albums');
-            const json = await res.json();
-            this.setState((prevState) => ({
-            ...prevState,
-            loading: false,
-            albums: json
-            }));
-        } catch(err) {
-            console.error("Error accediendo al servidor", err);
-        }
-    }
+    }    
 
     render() {
-        return <div>
-            Álbums: muestra los distintos álbums disponibles.
-            { this.state.loading ? 
-                <p>Cargando...</p> : 
-                <AlbumList albums={this.state.albums} 
-                           history={this.props.history}  
-                           location={this.props.location} 
-                           match={this.props.match} /> }
-        </div>
+        return <>
+            { this.renderAlbums() }
+        </>
     }
-
-    
 }
 
-export default Albums;
+const mapStateToProps = (state/*, otherProps */) => {
+  console.log('albums state', state);
+  return {
+    ...state
+  }
+}
+  
+export default connect(
+    mapStateToProps,
+    () => ({}),
+)(Albums);

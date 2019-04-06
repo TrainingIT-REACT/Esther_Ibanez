@@ -7,7 +7,12 @@ const actions = [
     // "SERVER_SONGS",
   
     // Usuarios
-    "SIGN_USER"
+    "SIGN_USER",
+    "ADD_USER_ALBUM",
+    
+    //SERVER
+    "ALBUMS",
+    "SONGS"
   ];
   
   // Las convertimos en un objeto
@@ -15,5 +20,7 @@ const actions = [
   actions.forEach(action => {
     actionTypes[action] = action;
   });
+
+  console.log('actionTypes', actionTypes);
   
   export default actionTypes;
