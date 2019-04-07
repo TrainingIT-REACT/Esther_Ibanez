@@ -17,10 +17,6 @@ const AlbumDetail = lazy(() => import('./Pages/AlbumDetail'));
 const Albums = lazy(() => import('./Pages/Albums'));
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-  
   async componentDidMount() {
     this.props.getAlbums();
     this.props.getSongs();

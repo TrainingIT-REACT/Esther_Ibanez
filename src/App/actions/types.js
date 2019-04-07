@@ -8,7 +8,8 @@ const actions = [
   
     // Usuarios
     "SIGN_USER",
-    "ADD_USER_ALBUM",
+    "ADD_ALBUM",
+    "ADD_SONG",
     
     //SERVER
     "ALBUMS",

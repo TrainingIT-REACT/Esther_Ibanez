@@ -6,7 +6,12 @@ export const signUser = (username) => ({
 });
 
 
-export const addUserAlbum = (album) => ({
-  type: types.ADD_USER_ALBUM,
-  album
+export const addAlbum = (albumId) => ({
+  type: types.ADD_ALBUM,
+  albumId
+});
+
+export const addSong = (songId) => ({
+  type: types.ADD_SONG,
+  songId
 });

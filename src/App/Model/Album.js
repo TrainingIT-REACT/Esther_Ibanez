@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router } from "react-router-dom";
+import { connect } from 'react-redux';
+
+import { addAlbum } from '../actions/user';
 
 class Album extends Component {
     constructor(props) {
@@ -11,7 +14,7 @@ class Album extends Component {
     
     onAlbum(e) {
         e.preventDefault();
-        //this.props.match history location
+        this.props.addAlbum(this.props.album.id);
         this.props.history.push(`${this.props.match.url}/${this.props.album.id}`);
     }
 
@@ -42,4 +45,12 @@ class Album extends Component {
     }
 }
 
-export default Album;
+const mapDispatchToProps = (dispatch) => ({
+    addAlbum: (albumId) => dispatch(addAlbum(albumId)),
+});
+  
+export default connect(
+    () => ({}),
+    mapDispatchToProps,
+  )(Album);
+  
