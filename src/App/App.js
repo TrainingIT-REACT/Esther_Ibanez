@@ -23,11 +23,11 @@ class App extends Component {
   }
 
   render() {
-    return <Router>
+    return  <Router>
       <div className="App">
         <div className="row">
           <div className="col col-sm-1"><h1>Reactify</h1></div>
-          <div className="col co-sm-11">
+          <nav className="col co-sm-11">
             <ul className="nav justify-content-around">
               <li className="nav-item">
                 <NavLink className="nav-link" activeClassName="active" to="/login">
@@ -41,33 +41,34 @@ class App extends Component {
                 <NavLink className="nav-link" activeClassName="active" to="/albums">Albums</NavLink>
               </li>
             </ul>
-          </div>
+          </nav>
         </div>
         
-        <div>
-          <div className="row player border border-secondary ">
-            <div className="col">
-              <a href="#back"><i className="fas fa-angle-left"></i></a>
-            </div>
-            <div className="col">
-              <a href="#play"><i className="fas fa-caret-square-right"></i></a>
-            </div>
-            <div className="col">
-              <a href="#forward"><i className="fas fa-angle-right"></i></a>
+        <main>
+          <div>
+            <div className="row player border border-secondary ">
+              <div className="col">
+                <a href="#back"><i className="fas fa-angle-left"></i></a>
+              </div>
+              <div className="col">
+                <a href="#play"><i className="fas fa-caret-square-right"></i></a>
+              </div>
+              <div className="col">
+                <a href="#forward"><i className="fas fa-angle-right"></i></a>
+              </div>
             </div>
           </div>
-        </div>
 
-        
-
-        <Switch>
-          <Route path="/" exact component={Home}/>
-          <Route path="/login" component={this.props.user.signedIn ? Profile : Login}/>
-          <Route exact path="/albums" component={Loader(Albums)}/>
-          <Route path="/albums/:id([0-9]*)" component={Loader(AlbumDetail)}/>
-        </Switch>
+         
+            <Switch>
+              <Route path="/" exact component={Home}/>
+              <Route path="/login" component={this.props.user.signedIn ? Profile : Login}/>
+              <Route exact path="/albums" component={Loader(Albums)}/>
+              <Route path="/albums/:id([0-9]*)" component={Loader(AlbumDetail)}/>
+            </Switch>
+        </main>
     </div>
-  </Router>
+    </Router>
   }
 }
 
