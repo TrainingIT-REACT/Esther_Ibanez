@@ -56,7 +56,7 @@ img.cover {
 .player {
   width: 200px;
   font-size: 30px;
-  margin: auto;
+  margin: 20px auto;
 }
 
 a.album-play {

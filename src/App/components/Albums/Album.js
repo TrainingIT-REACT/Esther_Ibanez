@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { BrowserRouter as Router } from "react-router-dom";
 import { connect } from 'react-redux';
 
-import { addAlbum } from '../actions/user';
+import { addAlbum } from '../../actions/user';
 
 class Album extends Component {
     constructor(props) {

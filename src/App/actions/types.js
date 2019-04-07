@@ -1,11 +1,5 @@
 // Definimos la lista de acciones
 const actions = [
-    // Todos
-    // "ADD_USER_SONG",
-    // "ADD_USER_ALBUM",
-    // "SERVER_ALBUMS",
-    // "SERVER_SONGS",
-  
     // Usuarios
     "SIGN_USER",
     "ADD_ALBUM",
@@ -13,7 +7,10 @@ const actions = [
     
     //SERVER
     "ALBUMS",
-    "SONGS"
+    "SONGS",
+
+    //PLAYER
+    "PLAY_SONG",
   ];
   
   // Las convertimos en un objeto

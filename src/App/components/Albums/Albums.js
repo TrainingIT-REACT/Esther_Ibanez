@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import AlbumList from '../Model/AlbumList';
+import AlbumList from './AlbumList';
 
 class Albums extends Component {
     renderAlbums() {

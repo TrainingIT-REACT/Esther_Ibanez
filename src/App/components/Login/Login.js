@@ -1,6 +1,6 @@
 import React, { createRef } from 'react';
 import { connect } from 'react-redux';
-import { signUser } from '../actions/user';
+import { signUser } from '../../actions/user';
 
 const SignUser = ({ signUser }) => {
   const username = createRef();

@@ -2,9 +2,10 @@ import React, { lazy, Component } from 'react';
 import { BrowserRouter as Router, Route, NavLink, Switch } from "react-router-dom";
 import { connect } from 'react-redux';
 
-import Login from './Pages/Login';
-import Profile from './Pages/Profile';
-import Home from './Pages/Home';
+import Login from './components/Login/Login';
+import Profile from './components/Login/Profile';
+import Home from './components/Home/Home';
+import Player from './components/Player/Player';
 import Loader from './Services/Loader';
 
 import { getAlbums } from './actions/albums';
@@ -13,8 +14,8 @@ import { getSongs } from './actions/songs';
 // Css
 import './App.css';
 
-const AlbumDetail = lazy(() => import('./Pages/AlbumDetail'));
-const Albums = lazy(() => import('./Pages/Albums'));
+const AlbumDetail = lazy(() => import('./components/Albums/AlbumDetail'));
+const Albums = lazy(() => import('./components/Albums/Albums'));
 
 class App extends Component {
   async componentDidMount() {
@@ -45,21 +46,8 @@ class App extends Component {
         </div>
         
         <main>
-          <div>
-            <div className="row player border border-secondary ">
-              <div className="col">
-                <a href="#back"><i className="fas fa-angle-left"></i></a>
-              </div>
-              <div className="col">
-                <a href="#play"><i className="fas fa-caret-square-right"></i></a>
-              </div>
-              <div className="col">
-                <a href="#forward"><i className="fas fa-angle-right"></i></a>
-              </div>
-            </div>
-          </div>
+            <Player />
 
-         
             <Switch>
               <Route path="/" exact component={Home}/>
               <Route path="/login" component={this.props.user.signedIn ? Profile : Login}/>

@@ -18,11 +18,11 @@ const SongsList = ({ songs, history, location, match, albums }) => {
 
   const renderAlbum = (album) => {
     console.log(album);
-    return <>
+    return <Fragment key={album.id}>
       <img className="cover-big" src={album.cover} alt="album-cover" />
       <p className="name-detail">{album.name}</p>
       <p className="artist-detail">{album.artist}</p>
-    </>;
+      </Fragment>;
   }
 
   return <>
@@ -37,7 +37,6 @@ const SongsList = ({ songs, history, location, match, albums }) => {
       })}
     </ul>
   </>
-  
 }
 
 const mapStateToProps = (state/*, otherProps */) => {

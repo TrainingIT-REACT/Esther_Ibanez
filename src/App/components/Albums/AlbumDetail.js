@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import SongsList from '../Model/SongsList';
+import SongsList from '../Songs/SongsList';
 
 const AlbumDetail = ({songs, history, location, match}) => {
   if (songs.isLoading) {
