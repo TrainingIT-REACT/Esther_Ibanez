@@ -4,17 +4,19 @@ import Song from './Song';
 
 const SongsList = ({ songs, history, location, match }) => (
   <ul className="songs">
-    {songs.map(songs => {
-      return (
-        <Fragment key={songs.id}>
-        <li key={songs.id} className="border border-secondary">
-          <Song song={songs} 
-                 history={history}  
-                 location={location}
-                 match={match} />
-        </li>
-        </Fragment>
-      );
+    {songs.map(song => {
+      return song.album_id == match.params.id ?
+        (
+          <Fragment key={song.id}>
+          <li key={song.id} className="border border-secondary">
+            <Song song={song} 
+                  history={history}  
+                  location={location}
+                  match={match} />
+          </li>
+          </Fragment>
+        )
+      : '';
     })}
   </ul>
 );

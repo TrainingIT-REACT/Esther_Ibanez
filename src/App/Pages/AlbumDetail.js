@@ -16,7 +16,6 @@ const AlbumDetail = ({songs, history, location, match}) => {
 }
 
 const mapStateToProps = (state/*, otherProps */) => {
-    console.log(state);
     return {
       ...state
     }
