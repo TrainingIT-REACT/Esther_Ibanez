@@ -4,6 +4,7 @@ import types from '../actions/types';
 const initialState = {
   name: '',
   albums: [],
+  songs: [],
 }
 
 // Implementamos el reducer
@@ -17,21 +18,27 @@ const reducer = (state = initialState, action) => {
         signedIn: true
       };
     case types.ADD_ALBUM:
-      return {
-        ...state,
-        albums: [
-          ...state.albums, 
-          action.albumId
-        ]
-      };
-    case types.ADD_ALBUM:
-      return {
-        ...state,
-        songs: [
-          ...state.songs, 
-          action.songId
-        ]
-      };
+      if (state.albums.includes(action.albumId) === false) {
+        return {
+          ...state,
+          albums: [
+            ...state.albums, 
+            action.albumId
+          ]
+        };
+      }
+      return state;
+    case types.ADD_SONG:
+      if (state.songs.includes(action.songId) === false) {
+        return {
+          ...state,
+          songs: [
+            ...state.songs, 
+            action.songId
+          ]
+        };
+      }
+      return state;
     default:
       return state;
   }

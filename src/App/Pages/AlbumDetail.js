@@ -8,8 +8,7 @@ const AlbumDetail = ({songs, history, location, match}) => {
   } else if (songs.hasError) {
     return <p>Hubo un error al obtener los datos :(</p>
   } else {
-    return  <SongsList songs={songs.list} 
-                       history={history}  
+    return  <SongsList history={history}  
                        location={location} 
                        match={match} /> 
   }   

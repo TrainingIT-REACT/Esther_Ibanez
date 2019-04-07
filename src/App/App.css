@@ -23,10 +23,12 @@ ul.albums {
   overflow-y: auto;
   overflow-x: hidden;
 }
+
 img.cover {
   max-width:60px;
   margin-left: 30px;
   float: left; 
+  border-radius: 50px;
 }
 
 .albums > li {
@@ -61,4 +63,47 @@ a.album-play {
   font-size: 50px;
   color: white;
   margin-left: 20px;
+}
+
+.songs > li {
+  margin: 1em 0 0 0;
+  list-style-type: none;
+}
+
+.songs > li > a{
+  text-decoration: none;
+}
+
+ul.songs {
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.song {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 85%;
+  font-style: italic;
+}
+
+.albumDetail {
+  margin: 20px 0;
+  text-align: center;
+}
+
+img.cover-big {
+  border-radius: 50px;
+  max-width:200px;
+  margin: 10px 0;
+}
+
+.name-detail {
+  font-family: 'Playfair Display', serif;
+}
+
+.artist-detail {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 85%;
+  font-style: italic;
 }
