@@ -7,7 +7,7 @@ const SongsList = ({ songs, history, location, match, albums }) => {
 
   const renderSong = (song, history, location, match) => {
     return (<Fragment key={song.id}>
-    <li key={song.id} className="border border-secondary">
+    <li key={song.id}>
       <Song song={song} 
             history={history}  
             location={location}

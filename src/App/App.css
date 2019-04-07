@@ -46,6 +46,11 @@ img.cover {
   margin-left:20px;
 }
 
+.time {
+  font-style: italic;
+  margin-left: 20px;
+}
+
 .artist {
   font-family: 'Open Sans', sans-serif;
   font-size: 85%;
@@ -94,6 +99,7 @@ ul.songs {
   font-family: 'Open Sans', sans-serif;
   font-size: 85%;
   font-style: italic;
+  width:100%;
 }
 
 .albumDetail {

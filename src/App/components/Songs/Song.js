@@ -16,14 +16,19 @@ class Song extends Component {
         this.props.playSong(this.props.song.audio);
     }
 
+    renderTime() {
+        const minutes = Math.floor(this.props.song.seconds/60);
+        const seconds = this.props.song.seconds - minutes * 60;
+        return <>{minutes}:{seconds}</>;
+    }
+
     render() {
         return <div className="song row">
                 <a href="#playsong" onClick={this.onSong}
-                   className="d-block p-2 bg-dark text-white col col-sm-12">
-                    <div>
-                        <span className="name">{this.props.song.name}</span>
-                        <br/>
-                    </div>
+                   className="d-block p-2 bg-dark text-white col col-sm-12  d-flex justify-content-between">
+                    <span className="name">{this.props.song.name}</span>
+                    <span className="time">{this.renderTime()}</span>
+                   
                 </a>
             </div>
     }
