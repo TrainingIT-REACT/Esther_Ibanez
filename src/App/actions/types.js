@@ -18,7 +18,5 @@ const actions = [
   actions.forEach(action => {
     actionTypes[action] = action;
   });
-
-  console.log('actionTypes', actionTypes);
   
   export default actionTypes;

@@ -11,8 +11,6 @@ const REDUCER_NAME = 'ALBUMS';
 
 // Implementamos el reducer
 const reducer = (state = initialState, action) => {
-  console.log("reducer albums state ", state);
-  console.log("reducer albums action ", action);
   switch(action.type) {
     case `${REDUCER_NAME}_${ActionType.Pending}`:
       return {

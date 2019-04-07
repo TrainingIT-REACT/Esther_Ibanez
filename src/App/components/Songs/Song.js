@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import { connect } from 'react-redux';
 
 import { addSong } from '../../actions/user';
@@ -23,17 +23,18 @@ class Song extends Component {
     }
 
     render() {
-        return <>
+        return <Fragment key={this.props.song.id}>
+            <li key={this.props.song.id} className="list-group-item d-flex justify-content-between align-items-center">
                 <a href="#playsong" onClick={this.onSong}>
                     {this.props.song.name}                  
                 </a>
-                <span class="badge badge-secondary badge-pill">{this.renderTime()}</span>
-            </>
+                <span className="badge badge-secondary badge-pill">{this.renderTime()}</span>
+            </li>
+        </Fragment>
     }
 }
 
 const mapStateToProps = (state/*, otherProps */) => {
-  console.log('song state', state);
   return {
     ...state
   }

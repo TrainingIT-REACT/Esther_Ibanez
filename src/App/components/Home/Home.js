@@ -1,12 +1,30 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import Song from '../Songs/Song';
 
 class Home extends Component {
     render() {
-        return <div>
-        Inicio: se muestra el listado de música recomendada. 
-        En este caso se va a tratar de un random de todas las canciones.
-      </div>
+      return <>
+        <h1>Home</h1>
+        <ul className="list-group">
+          {this.props.songs.list.map(song => {
+            return <Song song={song} 
+                        history={this.props.history}  
+                        location={this.props.location}
+                        match={this.props.match} />
+          })}
+        </ul>
+      </>
     }
 }
 
-export default Home;
+const mapStateToProps = (state/*, otherProps */) => {
+  return {
+    ...state
+  }
+}
+
+export default connect(
+    mapStateToProps,
+    () => ({}),
+)(Home);

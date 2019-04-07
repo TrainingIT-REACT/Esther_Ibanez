@@ -9,7 +9,6 @@ const initialState = {
 
 // Implementamos el reducer
 const reducer = (state = initialState, action) => {
-  console.log('reducer user ', state, action)
   switch(action.type) {
     case types.SIGN_USER:
       return {

@@ -5,19 +5,7 @@ import Song from './Song';
 const SongsList = ({ songs, history, location, match, albums }) => {
   const albumId = match.params.id;
 
-  const renderSong = (song, history, location, match) => {
-    return (<Fragment key={song.id}>
-    <li key={song.id} className="list-group-item d-flex justify-content-between align-items-center">
-      <Song song={song} 
-            history={history}  
-            location={location}
-            match={match} />
-    </li>
-    </Fragment>);
-  }
-
   const renderAlbum = (album) => {
-    console.log(album);
     return <Fragment key={album.id}>
       <img className="cover-big" src={album.cover} alt="album-cover" />
       <p className="name-detail">{album.name}</p>
@@ -25,7 +13,7 @@ const SongsList = ({ songs, history, location, match, albums }) => {
       </Fragment>;
   }
 
-  return <>
+  return <Fragment key={albumId}>
     <div className="albumDetail">
         {albums.list.map(album => {
           return album.id == albumId ? renderAlbum(album): '';
@@ -33,14 +21,17 @@ const SongsList = ({ songs, history, location, match, albums }) => {
     </div>
     <ul className="list-group">
       {songs.list.map(song => {
-        return song.album_id == albumId ? renderSong(song, history, location, match): '';
+        return song.album_id == albumId ? 
+              <Song song={song} 
+                    history={history}  
+                    location={location}
+                    match={match} />: '';
       })}
     </ul>
-  </>
+  </Fragment>
 }
 
 const mapStateToProps = (state/*, otherProps */) => {
-  console.log('song state', state);
   return {
     ...state,
   }

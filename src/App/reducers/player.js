@@ -7,7 +7,6 @@ const initialState = {
 
 // Implementamos el reducer
 const reducer = (state = initialState, action) => {
-  console.log('reducer player ', state, action)
   switch(action.type) {
     case types.PLAY_SONG:
       return {

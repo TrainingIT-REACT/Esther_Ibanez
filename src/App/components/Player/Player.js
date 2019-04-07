@@ -17,7 +17,6 @@ class Player extends Component {
 
 
 const mapStateToProps = (state/*, otherProps */) => {
-    console.log('player state', state);
     return {
         ...state,
     }

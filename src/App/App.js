@@ -32,7 +32,7 @@ class App extends Component {
             <ul className="nav justify-content-around">
               <li className="nav-item">
                 <NavLink className="nav-link" activeClassName="active" to="/login">
-                  {this.props.user.signedIn ? 'Profile' : 'Login'}
+                  {this.props.user.signedIn ? this.props.user.name : 'Login'}
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -61,7 +61,6 @@ class App extends Component {
 }
 
 const mapStateToProps = (state/*, otherProps */) => {
-  console.log('app state', state);
   return {
     ...state
   }
