@@ -23,14 +23,12 @@ class Song extends Component {
     }
 
     render() {
-        return <div className="song row">
-                <a href="#playsong" onClick={this.onSong}
-                   className="d-block p-2 bg-dark text-white col col-sm-12  d-flex justify-content-between">
-                    <span className="name">{this.props.song.name}</span>
-                    <span className="time">{this.renderTime()}</span>
-                   
+        return <>
+                <a href="#playsong" onClick={this.onSong}>
+                    {this.props.song.name}                  
                 </a>
-            </div>
+                <span class="badge badge-secondary badge-pill">{this.renderTime()}</span>
+            </>
     }
 }
 

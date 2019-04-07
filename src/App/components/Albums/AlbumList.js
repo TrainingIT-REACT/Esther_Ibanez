@@ -3,20 +3,20 @@ import React, { Fragment } from 'react';
 import Album from './Album';
 
 const AlbumList = ({ albums, history, location, match }) => (
-  <ul className="albums">
+  <div className="card-columns">
     {albums.map(album => {
       return (
         <Fragment key={album.id}>
-        <li key={album.id} className="border border-secondary">
+        <div className="card">
           <Album album={album} 
                  history={history}  
                  location={location}
                  match={match} />
-        </li>
+        </div>
         </Fragment>
       );
     })}
-  </ul>
+  </div>
 );
 
 export default AlbumList;

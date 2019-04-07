@@ -7,7 +7,7 @@ const SongsList = ({ songs, history, location, match, albums }) => {
 
   const renderSong = (song, history, location, match) => {
     return (<Fragment key={song.id}>
-    <li key={song.id}>
+    <li key={song.id} className="list-group-item d-flex justify-content-between align-items-center">
       <Song song={song} 
             history={history}  
             location={location}
@@ -31,7 +31,7 @@ const SongsList = ({ songs, history, location, match, albums }) => {
           return album.id == albumId ? renderAlbum(album): '';
         })}
     </div>
-    <ul className="songs">
+    <ul className="list-group">
       {songs.list.map(song => {
         return song.album_id == albumId ? renderSong(song, history, location, match): '';
       })}

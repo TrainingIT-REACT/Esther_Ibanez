@@ -24,24 +24,26 @@ class Album extends Component {
     }
 
     render() {
-        return <Router>
-            <div className="album row">
-                <a href={`${this.props.match.url}/${this.props.album.name}`} onClick={this.onAlbum}
-                   className="d-block p-2 bg-dark text-white col col-sm-10">
-                    <img src={this.props.album.cover} alt={this.props.album.name} className="cover"/> 
+        return <>
+                <a href={`${this.props.match.url}/${this.props.album.name}`} onClick={this.onAlbum}>
+                   <img className="card-img-top" src={this.props.album.cover} alt={this.props.album.name} />
+                    <div class="card-body">
+                        <h5 class="card-title name">{this.props.album.name}</h5>
+                        <p class="card-text artist">{this.props.album.artist}</p>
+                    </div>
+                    {/* <img src={this.props.album.cover} alt={this.props.album.name} className="cover"/> 
                     <div>
                         <span className="name">{this.props.album.name}</span>
                         <br/>
                         <span className="artist">{this.props.album.artist}</span>
-                    </div>
+                    </div> */}
                 </a>
-                <div className="col col-sm-2 d-block p-2 bg-dark text-white">
+                {/* <div className="col col-sm-2 d-block p-2 bg-dark text-white">
                     <a  href={`${this.props.match.url}/${this.props.album.name}/play`} onClick={this.onPlayAlbum} className="album-play">
                         <i className="fas fa-caret-square-right"></i>
                     </a>
-                </div>
-            </div>
-        </Router>    
+                </div> */}
+            </>   
     }
 }
 

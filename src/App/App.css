@@ -7,14 +7,26 @@
   font-family: 'Germania One', cursive;
 }
 
-.App a {
+.App nav a {
+  font-family: 'Baloo Chettan', cursive;
+  color: #423448;
+  text-decoration:none;
+}
+
+.App nav a:hover {
   font-family: 'Baloo Chettan', cursive;
   color: #721796;
+  text-decoration:none;
+}
+
+.App a {
+  color: #423448;
+  text-decoration:none;
 }
 
 .App a:hover {
-  font-family: 'Baloo Chettan', cursive;
-  color: #dea4f5;
+  color: #721796;
+  text-decoration:none;
 }
 
 ul.albums {
