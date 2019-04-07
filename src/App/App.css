@@ -54,17 +54,26 @@ img.cover {
 }
 
 .player {
-  width: 200px;
-  font-size: 30px;
-  margin: 20px auto;
+  text-align: center;
 }
 
-a.album-play {
-  font-size: 50px;
-  color: white;
-  margin-left: 20px;
+audio{
+  background: #ffffff;;
+  width:400px;
+  padding:20px;
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-transition:all 0.5s linear;
+  -moz-transition:all 0.5s linear;
+  -o-transition:all 0.5s linear;
+  transition:all 0.5s linear;
+  -moz-box-shadow: 2px 2px 4px 0px #721796;
+  -webkit-box-shadow:  2px 2px 4px 0px #721796;
+  box-shadow: 2px 2px 4px 0px #721796;
+  -moz-border-radius:7px 7px 7px 7px ;
+  -webkit-border-radius:7px 7px 7px 7px ;
+  border-radius:7px 7px 7px 7px ;
 }
-
 .songs > li {
   margin: 1em 0 0 0;
   list-style-type: none;
@@ -96,6 +105,9 @@ img.cover-big {
   border-radius: 50px;
   max-width:200px;
   margin: 10px 0;
+  -moz-box-shadow: 2px 2px 4px 0px #721796;
+  -webkit-box-shadow:  2px 2px 4px 0px #721796;
+  box-shadow: 2px 2px 4px 0px #721796;
 }
 
 .name-detail {
