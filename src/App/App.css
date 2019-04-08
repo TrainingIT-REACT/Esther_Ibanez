@@ -137,3 +137,8 @@ img.cover-big {
   font-size: 85%;
   font-style: italic;
 }
+
+.btn-primary {
+  background-color: #004FA8;
+  border-color: #004FA8;
+}

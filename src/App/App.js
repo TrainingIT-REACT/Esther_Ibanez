@@ -45,7 +45,7 @@ class App extends Component {
           </nav>
         </div>
         
-        <main>
+        <div>
             <Player />
 
             <Switch>
@@ -54,7 +54,7 @@ class App extends Component {
               <Route exact path="/albums" component={Loader(Albums)}/>
               <Route path="/albums/:id([0-9]*)" component={Loader(AlbumDetail)}/>
             </Switch>
-        </main>
+        </div>
     </div>
     </Router>
   }

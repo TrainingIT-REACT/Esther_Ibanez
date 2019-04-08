@@ -21,7 +21,7 @@ class Album extends Component {
                 <a href={`${this.props.match.url}/${this.props.album.name}`} onClick={this.onAlbum}>
                    <img className="card-img-top" src={this.props.album.cover} alt={this.props.album.name} />
                     <div className="card-body">
-                        <h5 className="card-title name">{this.props.album.name}</h5>
+                        <p className="card-title name">{this.props.album.name}</p>
                         <p className="card-text artist">{this.props.album.artist}</p>
                     </div>
                     
