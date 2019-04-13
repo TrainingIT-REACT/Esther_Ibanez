@@ -1,8 +1,144 @@
 .App {
-  margin: 3em auto;
-  max-width: 50em;
+  font-family: 'Raleway', sans-serif;
 }
 
 .App h1 {
   text-align: center;
+  font-family: 'Germania One', cursive;
+}
+
+.App nav a {
+  font-family: 'Baloo Chettan', cursive;
+  color: #423448;
+  text-decoration:none;
+}
+
+.App nav a:hover {
+  font-family: 'Baloo Chettan', cursive;
+  color: #721796;
+  text-decoration:none;
+}
+
+.App a {
+  color: #423448;
+  text-decoration:none;
+}
+
+.App a:hover {
+  color: #721796;
+  text-decoration:none;
+}
+
+ul.albums {
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+img.cover {
+  max-width:60px;
+  margin-left: 30px;
+  float: left; 
+  border-radius: 50px;
+}
+
+.albums > li {
+  margin: 1em 0 0 0;
+  list-style-type: none;
+}
+
+.albums > li > a{
+  text-decoration: none;
+}
+
+
+.name {
+  font-family: 'Playfair Display', serif;
+  margin-left:20px;
+}
+
+.time {
+  font-style: italic;
+  margin-left: 20px;
+}
+
+.artist {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 85%;
+  font-style: italic;
+  margin-left:20px;
+}
+
+.player {
+  text-align: center;
+}
+
+audio{
+  background: #ffffff;;
+  width:400px;
+  padding:20px;
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-transition:all 0.5s linear;
+  -moz-transition:all 0.5s linear;
+  -o-transition:all 0.5s linear;
+  transition:all 0.5s linear;
+  -moz-box-shadow: 2px 2px 4px 0px #721796;
+  -webkit-box-shadow:  2px 2px 4px 0px #721796;
+  box-shadow: 2px 2px 4px 0px #721796;
+  -moz-border-radius:7px 7px 7px 7px ;
+  -webkit-border-radius:7px 7px 7px 7px ;
+  border-radius:7px 7px 7px 7px ;
+}
+.songs > li {
+  margin: 1em 0 0 0;
+  list-style-type: none;
+}
+
+.songs > li > a{
+  text-decoration: none;
+}
+
+ul.songs {
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.song {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 85%;
+  font-style: italic;
+  width:100%;
+}
+
+.albumDetail {
+  margin: 20px 0;
+  text-align: center;
+}
+
+img.cover-big {
+  border-radius: 50px;
+  max-width:200px;
+  margin: 10px 0;
+  -moz-box-shadow: 2px 2px 4px 0px #721796;
+  -webkit-box-shadow:  2px 2px 4px 0px #721796;
+  box-shadow: 2px 2px 4px 0px #721796;
+}
+
+.name-detail {
+  font-family: 'Playfair Display', serif;
+}
+
+.artist-detail {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 85%;
+  font-style: italic;
+}
+
+.btn-primary {
+  background-color: #004FA8;
+  border-color: #004FA8;
 }
