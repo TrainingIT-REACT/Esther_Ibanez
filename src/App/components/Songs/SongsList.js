@@ -1,13 +1,16 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import Song from './Song';
+require('dotenv').config({path: __dirname + '../../../.env'});
+
+const host = process.env.REACT_APP_API_HOST;
 
 const SongsList = ({ songs, history, location, match, albums }) => {
   const albumId = match.params.id;
 
   const renderAlbum = (album) => {
     return <Fragment key={album.id}>
-      <img className="cover-big" src={album.cover} alt="album-cover" />
+      <img className="cover-big" src={host+album.cover} alt="album-cover" />
       <p className="name-detail">{album.name}</p>
       <p className="artist-detail">{album.artist}</p>
       </Fragment>;

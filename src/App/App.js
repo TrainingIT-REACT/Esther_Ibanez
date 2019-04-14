@@ -13,6 +13,8 @@ import { getSongs } from './actions/songs';
 
 // Css
 import './App.css';
+require('dotenv').config({path: __dirname + '../../.env'});
+
 
 const AlbumDetail = lazy(() => import('./components/Albums/AlbumDetail'));
 const Albums = lazy(() => import('./components/Albums/Albums'));

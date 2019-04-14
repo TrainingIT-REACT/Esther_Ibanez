@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const config = {
     entry: {
@@ -17,6 +18,9 @@ const config = {
                 "react-audio-player",
                 "regenerator-runtime"
             ]
+    },
+    node: {
+        fs: 'empty'
     },
     output: {
         path: path.resolve(__dirname, 'build'),
@@ -39,6 +43,10 @@ const config = {
         new HtmlWebPackPlugin({
             template: './public/index.html',
             filename: './index.html'
+        }),
+        new Dotenv({
+            path: './.env', 
+            safe: true 
         })
     ],
     devServer: {
