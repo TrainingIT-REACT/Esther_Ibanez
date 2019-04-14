@@ -3,6 +3,11 @@ import { connect } from 'react-redux';
 
 import { addAlbum } from '../../actions/user';
 
+require('dotenv').config({path: __dirname + '../../../.env'});
+
+const host = process.env.REACT_APP_API_HOST;
+
+
 class Album extends Component {
     constructor(props) {
         super(props);
@@ -19,7 +24,7 @@ class Album extends Component {
     render() {
         return <>
                 <a href={`${this.props.match.url}/${this.props.album.name}`} onClick={this.onAlbum}>
-                   <img className="card-img-top" src={this.props.album.cover} alt={this.props.album.name} />
+                   <img className="card-img-top" src={host+this.props.album.cover} alt={this.props.album.name} />
                     <div className="card-body">
                         <p className="card-title name">{this.props.album.name}</p>
                         <p className="card-text artist">{this.props.album.artist}</p>

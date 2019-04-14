@@ -2,20 +2,15 @@ import React, { lazy, Component } from 'react';
 import { BrowserRouter as Router, Route, NavLink, Switch } from "react-router-dom";
 import { connect } from 'react-redux';
 
-import Login from './components/Login/Login';
-import Profile from './components/Login/Profile';
-import Home from './components/Home/Home';
 import Player from './components/Player/Player';
-import Loader from './Services/Loader';
+import AppRouter from './AppRouter';
 
 import { getAlbums } from './actions/albums';
 import { getSongs } from './actions/songs';
 
 // Css
 import './App.css';
-
-const AlbumDetail = lazy(() => import('./components/Albums/AlbumDetail'));
-const Albums = lazy(() => import('./components/Albums/Albums'));
+require('dotenv').config({path: __dirname + '../../.env'});
 
 class App extends Component {
   async componentDidMount() {
@@ -48,12 +43,7 @@ class App extends Component {
         <div>
             <Player />
 
-            <Switch>
-              <Route path="/" exact component={Home}/>
-              <Route path="/login" component={this.props.user.signedIn ? Profile : Login}/>
-              <Route exact path="/albums" component={Loader(Albums)}/>
-              <Route path="/albums/:id([0-9]*)" component={Loader(AlbumDetail)}/>
-            </Switch>
+            <AppRouter user={this.props.user} />
         </div>
     </div>
     </Router>
